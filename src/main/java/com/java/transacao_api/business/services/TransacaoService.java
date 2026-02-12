@@ -47,6 +47,7 @@ public class TransacaoService {
         log.info("Iniciadas buscas de transações por tempo" +intervaloBusca);
         OffsetDateTime dataHoraIntervalo = OffsetDateTime.now().minusSeconds(intervaloBusca);
         
+        log.info("Retorno de transações com sucesso");
         return listaTransacoes.stream()
                     .filter(transacao -> transacao.dataHora()
                             .isAfter(dataHoraIntervalo)).toList();
